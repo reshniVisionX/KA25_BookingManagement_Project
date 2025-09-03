@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payment Confirmation | FoodieXpress</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .animate-pop { animation: pop 0.5s cubic-bezier(.17,.67,.83,.67); }
+    @keyframes pop { 0% { transform: scale(0.7); } 100% { transform: scale(1); } }
+  </style>
+</head>
+<body class="bg-green-50 min-h-screen flex flex-col items-center justify-center p-6">
+
+  <!-- Navbar -->
+  <header class="w-full max-w-xl mx-auto mb-8">
+    <div class="flex justify-between items-center px-2 py-2">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">🍽️</span>
+        <h1 class="text-xl font-bold text-green-600">FoodieXpress</h1>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="order-history.html" class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold hover:bg-green-200 transition">My Orders</a>
+        <img src="https://randomuser.me/api/portraits/men/31.jpg" alt="Profile" class="w-8 h-8 rounded-full border-2 border-green-400 shadow"/>
+      </div>
+    </div>
+  </header>
+
+  <div class="bg-white max-w-xl w-full p-10 rounded-2xl shadow-2xl text-center animate-pop">
+    <div class="text-green-500 text-6xl mb-4">✅</div>
+    <h2 class="text-3xl font-bold text-green-700 mb-3">Payment Successful!</h2>
+    <p class="text-lg text-gray-700 mb-6">Your order has been placed successfully.<br>Get ready to enjoy your delicious meal!</p>
+
+    <!-- Order Tracking -->
+    <div class="mb-6">
+      <div class="flex items-center justify-center gap-4 mb-2">
+        <div class="flex flex-col items-center">
+          <div class="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center font-bold">1</div>
+          <span class="text-xs mt-1 text-green-600 font-semibold">Order Placed</span>
+        </div>
+        <div class="flex-1 h-1 bg-green-200"></div>
+        <div class="flex flex-col items-center">
+          <div class="w-8 h-8 rounded-full bg-yellow-400 text-white flex items-center justify-center font-bold">2</div>
+          <span class="text-xs mt-1 text-yellow-600 font-semibold">Preparing</span>
+        </div>
+        <div class="flex-1 h-1 bg-green-200"></div>
+        <div class="flex flex-col items-center">
+          <div class="w-8 h-8 rounded-full bg-blue-400 text-white flex items-center justify-center font-bold">3</div>
+          <span class="text-xs mt-1 text-blue-600 font-semibold">On the Way</span>
+        </div>
+        <div class="flex-1 h-1 bg-green-200"></div>
+        <div class="flex flex-col items-center">
+          <div class="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center font-bold">4</div>
+          <span class="text-xs mt-1 text-green-700 font-semibold">Delivered</span>
+        </div>
+      </div>
+      <div class="text-xs text-gray-500">Track your order live in <a href="order-history.html" class="underline text-green-600 font-semibold">Order History</a></div>
+    </div>
+
+    <!-- Order Summary -->
+    <div class="bg-green-100 p-4 rounded-xl mb-6 text-left">
+      <p><strong>Order ID:</strong> #RZ456789</p>
+      <p><strong>Restaurant:</strong> Swathi Tiffin Center</p>
+      <p><strong>Total Paid:</strong> ₹260 <span class="bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full text-xs font-semibold ml-2">20% OFF</span></p>
+      <p><strong>Delivery Address:</strong> 12th Cross, MG Road, Bangalore</p>
+      <p><strong>Estimated Delivery:</strong> 30-40 minutes</p>
+      <p class="mt-2 text-green-700 text-sm flex items-center gap-2">
+        <svg class="w-5 h-5 inline" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+        Payment is 100% secure & encrypted
+      </p>
+    </div>
+
+    <!-- Download Invoice & Share -->
+    <div class="flex flex-col md:flex-row gap-4 justify-center mb-6">
+      <a href="#" class="bg-green-500 text-white px-6 py-2 rounded-xl hover:bg-green-600 transition duration-200 flex items-center gap-2 justify-center">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 16v-8m0 8l-4-4m4 4l4-4"/></svg>
+        Download Invoice
+      </a>
+      <a href="#" class="bg-blue-500 text-white px-6 py-2 rounded-xl hover:bg-blue-600 transition duration-200 flex items-center gap-2 justify-center">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 12v-2a8 8 0 018-8 8 8 0 018 8v2a8 8 0 01-8 8 8 8 0 01-8-8z"/></svg>
+        Share Order
+      </a>
+    </div>
+
+    <!-- Button -->
+    <a href="order-history.html" class="bg-orange-500 text-white px-6 py-2 rounded-xl hover:bg-orange-600 transition duration-200 font-semibold">
+      View Order History
+    </a>
+
+    <p class="text-sm text-gray-500 mt-4">Thank you for choosing FoodieXpress! 🙏</p>
+    <p class="text-xs text-gray-400 mt-2">Need help? <a href="#" class="underline text-green-600 font-semibold">Chat with support</a></p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white mt-12 py-4 text-center shadow-inner w-full">
+    <p class="text-sm text-gray-500">© 2025 FoodieXpress. All rights reserved.</p>
+  </footer>
+</body>
+</html>

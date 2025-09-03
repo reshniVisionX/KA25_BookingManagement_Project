@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Place Your Order | FoodieXpress</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+<body class="bg-orange-50 min-h-screen p-6">
+
+  <!-- Sticky Navbar -->
+  <header class="bg-white shadow sticky top-0 z-40 mb-8">
+    <div class="max-w-3xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">🍽️</span>
+        <h1 class="text-xl font-bold text-orange-500">FoodieXpress</h1>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="review-cart.html" class="relative">
+          <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h18l-1 12H4L3 3z" />
+          </svg>
+          <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 rounded-full">2</span>
+        </a>
+        <img src="https://randomuser.me/api/portraits/men/31.jpg" alt="Profile" class="w-8 h-8 rounded-full border-2 border-orange-400 shadow"/>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-lg">
+    <h2 class="text-3xl font-bold text-orange-600 mb-8 text-center">📝 Place Your Order</h2>
+
+    <!-- Progress Bar -->
+    <div class="flex items-center justify-center mb-8">
+      <div class="flex items-center gap-2 w-full max-w-md">
+        <div class="flex flex-col items-center flex-1">
+          <div class="w-8 h-8 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold">1</div>
+          <span class="text-xs mt-1 text-orange-600 font-semibold">Cart</span>
+        </div>
+        <div class="flex-1 h-1 bg-orange-200"></div>
+        <div class="flex flex-col items-center flex-1">
+          <div class="w-8 h-8 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold">2</div>
+          <span class="text-xs mt-1 text-orange-600 font-semibold">Address</span>
+        </div>
+        <div class="flex-1 h-1 bg-orange-200"></div>
+        <div class="flex flex-col items-center flex-1">
+          <div class="w-8 h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center font-bold">3</div>
+          <span class="text-xs mt-1 text-gray-500">Payment</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delivery Details Form -->
+    <form class="space-y-6">
+
+      <div>
+        <label class="block font-semibold text-gray-700 mb-1">👤 Full Name</label>
+        <input type="text" placeholder="Enter your name" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-orange-200 transition">
+      </div>
+
+      <div>
+        <label class="block font-semibold text-gray-700 mb-1">📞 Phone Number</label>
+        <input type="tel" placeholder="Enter your contact number" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-orange-200 transition">
+      </div>
+
+      <div>
+        <label class="block font-semibold text-gray-700 mb-1">🏠 Delivery Address</label>
+        <textarea placeholder="Enter complete address with landmark" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-orange-200 transition" rows="3"></textarea>
+      </div>
+
+      <div>
+        <label class="block font-semibold text-gray-700 mb-1">📅 Delivery Date</label>
+        <input type="date" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-orange-200 transition">
+      </div>
+
+      <div>
+        <label class="block font-semibold text-gray-700 mb-1">⏰ Preferred Time</label>
+        <input type="time" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-orange-200 transition">
+      </div>
+
+      <!-- Special Instructions -->
+      <div>
+        <label class="block font-semibold text-gray-700 mb-1">📝 Special Instructions</label>
+        <textarea placeholder="E.g. No onions, ring the bell, etc." class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-orange-200 transition" rows="2"></textarea>
+      </div>
+
+      <!-- Coupon Section -->
+      <div class="flex items-center gap-2">
+        <input type="text" placeholder="Enter Coupon Code" class="border border-orange-300 rounded-lg px-3 py-2 w-48 focus:ring-2 focus:ring-orange-200 transition">
+        <button type="button" class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition">Apply</button>
+        <span class="text-green-600 text-sm ml-2">20% OFF Applied!</span>
+      </div>
+
+      <!-- Payment Summary -->
+      <div class="bg-orange-100 p-4 rounded-lg mt-6">
+        <div class="flex justify-between items-center mb-2">
+          <p class="text-lg font-semibold text-gray-800">💵 Total Amount: ₹260</p>
+          <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">You saved ₹40!</span>
+        </div>
+        <p class="text-sm text-gray-600">Includes taxes and delivery charges</p>
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex justify-between mt-8">
+        <a href="review-cart.html" class="bg-gray-300 text-gray-800 px-6 py-2 rounded-xl hover:bg-gray-400 transition flex items-center gap-2">
+          ⬅ Back
+        </a>
+        <a href="payment.html" class="bg-orange-500 text-white px-6 py-2 rounded-xl hover:bg-orange-600 transition flex items-center gap-2 font-semibold">
+          Proceed to Payment ➡
+        </a>
+      </div>
+    </form>
+  </div>
+
+  <!-- Floating Help Button -->
+  <button class="fixed bottom-6 right-6 bg-orange-500 hover:bg-orange-600 text-white rounded-full shadow-lg p-4 flex items-center gap-2 animate-bounce focus:outline-none" aria-label="Help">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.77 9.77 0 01-4-.8L3 21l1.8-4A7.96 7.96 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+    </svg>
+    <span class="hidden md:inline font-semibold">Help</span>
+  </button>
+
+  <!-- Footer -->
+  <footer class="bg-white mt-12 py-4 text-center shadow-inner">
+    <p class="text-sm text-gray-500">© 2025 FoodieXpress. All rights reserved.</p>
+  </footer>
+</body>
+</html>

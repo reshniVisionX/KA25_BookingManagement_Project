@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <style>
+
+    header {
+      background-color: #fed7dea3;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #1f2937;
+      display: flex;
+      align-items: center;
+    }
+    .logo-icon {
+      width: 24px;
+      height: 24px;
+      fill: none;
+      stroke: #f43f5e;
+      margin-right: 0.5rem;
+    }
+    nav a {
+      margin-left: 1rem;
+      color: #4b5563;
+      text-decoration: none;
+    }
+    nav a:hover {
+      color: #f43f5e;
+    }
+    .logout-option{
+      color:#eb2a2a;
+    }
+    </style>
+</head>
+<body>
+     <header>
+    <div class="logo">
+      <svg class="logo-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 9 10 6 10-6-10-6L2 9Z"/><path d="m2 15 10 6 10-6"/></svg>
+      Stay & Dine
+    </div>
+    <nav>
+      <a href="./Hotel/index.html">Stays</a>
+     <a href="./Resaturent/restaurent-details.html">Dine</a>
+      <a href="./Experiance.html">Experiences</a>
+      <a href="AboutUs.html">About us</a>
+      <a class="logout-option"  href="Login.html">Logout</a>
+      <a href="./UserDashboard/dashboard.html">
+  <svg style="vertical-align: middle;" width="16" height="16" fill="none" stroke="#eb2a2a" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+    <path d="M20 21v-2a4 4 0 0 0-3-3.87M4 21v-2a4 4 0 0 1 3-3.87m13-5.13a4 4 0 1 0-8 0 4 4 0 0 0 8 0zM4 12a4 4 0 1 1 8 0 4 4 0 0 1-8 0z"/>
+  </svg>
+</a>
+
+    </nav>
+  </header>
+
+</body>
+</html>

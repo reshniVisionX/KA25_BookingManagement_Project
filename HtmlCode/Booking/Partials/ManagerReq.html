@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manager Requests</title>
+  <style>
+.card-request {
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 10px; 
+}
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    h4{
+        color:#fb758b;
+    }
+
+  .container {
+  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin: 20px auto; 
+  max-width: 1200px; 
+  box-sizing: border-box; 
+  padding: 0 20px; 
+}
+
+    .card {
+      flex: 1 1 calc(50% - 1.5rem);
+      background-color: #ffffff;
+      padding: 1.5rem;
+      box-shadow: 2px 2px 8px rgba(134, 134, 134, 0.399);
+      border-radius: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .profile-pic {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      background-color: beige;
+    }
+
+    .card-content {
+      flex: 1;
+    }
+
+    .card-content h4 {
+      margin: 0 0 0.5rem;
+    }
+
+    .card-content p {
+      margin: 0.3rem 0;
+    }
+
+    .message-btn {
+      margin-top: 0.8rem;
+      padding: 0.5rem 1rem;
+      background-color: #f3536e;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .message-btn:hover {
+      background-color: #8d091f;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        flex: 1 1 100%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+<div class="card-request">
+  <h2>Manager Requests</h2>
+  <div class="container">
+    
+    <div class="card">
+      <img src="https://placehold.co/80x80" alt="Profile Pic" class="profile-pic">
+      <div class="card-content">
+        <h4>Ravi Sharma</h4>
+        <p>Email: ravi.sharma@example.com</p>
+        <p>Request:  Unable to update the room availability calendar, please check.</p>
+        <button class="message-btn">Message</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://placehold.co/80x80" alt="Profile Pic" class="profile-pic">
+      <div class="card-content">
+        <h4>Priya Mehta</h4>
+        <p>Email: priya.mehta@example.com</p>
+        <p>Request: Need help adding a new seasonal menu to the restaurant page.</p>
+        <button class="message-btn">Message</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://placehold.co/80x80" alt="Profile Pic" class="profile-pic">
+      <div class="card-content">
+        <h4>Rajiv Kapoor</h4>
+        <p>Email: rajiv.kapoor@example.com</p>
+        <p>Request:  Reservation system is showing double bookings for weekends.</p>
+        <button class="message-btn">Message</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://placehold.co/80x80" alt="Profile Pic" class="profile-pic">
+      <div class="card-content">
+        <h4>Anjali Das</h4>
+        <p>Email: anjali.das@example.com</p>
+        <p>Request: Unable to generate monthly sales and occupancy reports.</p>
+        <button class="message-btn">Message</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://placehold.co/80x80" alt="Profile Pic" class="profile-pic">
+      <div class="card-content">
+        <h4>Mohit Verma</h4>
+        <p>Email: mohit.verma@example.com</p>
+        <p>Request: Unable to generate monthly sales and occupancy reports.</p>
+        <button class="message-btn">Message</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://placehold.co/80x80" alt="Profile Pic" class="profile-pic">
+      <div class="card-content">
+        <h4>Neha Reddy</h4>
+        <p>Email: neha.reddy@example.com</p>
+        <p>Request: Asking permission to organize a team outing.</p>
+        <button class="message-btn">Message</button>
+      </div>
+    </div>
+</div>
+  </div>
+</body>
+</html>

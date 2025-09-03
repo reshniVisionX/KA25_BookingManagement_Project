@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hotel Manager Dashboard</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Your Custom CSS -->
+  <link rel="stylesheet" href="RMD.css">
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Hotel Name</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav">
+          <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/UserDashboard/bookings.html">Dashboard</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#">Rooms</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Room Categories</a></li>
+              <li><a href="#">Availability</a></li>
+              <li><a href="#">Room Services</a></li>
+              <li><a href="#">Maintenance</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link">Bookings</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">New Booking</a></li>
+              <li><a href="#">Guest List</a></li>
+              <li><a href="#">Check In / Check Out</a></li>
+              <li><a href="#">Booking Reports</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link">Billing</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Invoices</a></li>
+              <li><a href="#">Payments</a></li>
+              <li><a href="#">Tax Reports</a></li>
+              <li><a href="#">Ledger</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#">Feedback</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">CRM</a></li>
+        </ul>
+        <div class="user-section d-flex align-items-center gap-3">
+          <i class="fas fa-bell"></i>
+          <div class="profile-container position-relative">
+            <img src="Images/K_logo.jpg" class="profile-img" alt="User">
+            <ul class="profile-menu">
+              <li>Profile</li>
+              <li>Switch Account</li>
+              <li>Support Ticket</li>
+              <li>Help</li>
+              <li>Contract Detail</li>
+              <li>Contact Us</li>
+              <li>Sign out</li>
+              <li><hr></li>
+              <li>MG Road Branch</li>
+              <li>Manager Role</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Tab Section -->
+  <div class="tab-section">
+    <button class="tab-btn active-tab">Room Management</button>
+    <button class="tab-btn">Guest Services</button>
+  </div>
+
+  <!-- Control Bar -->
+  <div class="control-bar">
+    <select class="table-count-select">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6" selected>6</option>
+    </select>
+
+    <button class="refresh-btn">Refresh</button>
+
+    <select class="order-dropdown">
+      <option disabled selected>Quick Actions</option>
+      <option>Assign Room</option>
+      <option>Request Service</option>
+      <option>Emergency Alert</option>
+    </select>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend-row">
+    <div class="legend-item">
+      <span class="legend-box free"></span> Room Available
+    </div>
+    <div class="legend-item">
+      <span class="legend-box running"></span> Occupied
+    </div>
+    <div class="legend-item">
+      <span class="legend-box settled"></span> Reserved
+    </div>
+    <div class="legend-item">
+      <span class="legend-box printed"></span> Under Maintenance
+    </div>
+    <div class="legend-item">
+      <span class="legend-box ready"></span> Ready for Check-in
+    </div>
+  </div>
+
+  <!-- Room Types -->
+  <div class="dining-section">
+    <div class="dining-cards">
+      <div class="cards">Standard Rooms</div>
+      <div class="cards">Deluxe Rooms</div>
+      <div class="cards">Suites</div>
+      <div class="cards">Conference Halls</div>
+    </div>
+  </div>
+
+  <!-- Room Numbers -->
+  <div class="dining-tables">
+    <div class="card">101</div>
+    <div class="card">102</div>
+    <div class="card">103</div>
+    <div class="card">104</div>
+    <div class="card">105</div>
+    <div class="card">106</div>
+    <div class="card">107</div>
+    <div class="card">108</div>
+    <div class="card">109</div>
+    <div class="card">110</div>
+    <div class="card">111</div>
+    <div class="card">112</div>
+  </div>
+
+</body>
+</html>

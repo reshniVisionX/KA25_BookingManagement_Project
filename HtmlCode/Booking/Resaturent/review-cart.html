@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Review Cart | FoodieXpress</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+<body class="bg-yellow-50 min-h-screen p-6">
+
+  <!-- Sticky Navbar -->
+  <header class="bg-white shadow sticky top-0 z-40 mb-8">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">🍽️</span>
+        <h1 class="text-xl font-bold text-orange-500">FoodieXpress</h1>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="add-items.html" class="relative">
+          <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h18l-1 12H4L3 3z" />
+          </svg>
+          <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 rounded-full">2</span>
+        </a>
+        <img src="https://randomuser.me/api/portraits/men/31.jpg" alt="Profile" class="w-8 h-8 rounded-full border-2 border-orange-400 shadow"/>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-4xl mx-auto bg-white p-6 rounded-2xl shadow-lg">
+    <h2 class="text-3xl font-bold text-center text-orange-600 mb-6">🛒 Review Your Cart</h2>
+
+    <!-- Progress Bar -->
+    <div class="flex items-center justify-center mb-8">
+      <div class="flex items-center gap-2 w-full max-w-md">
+        <div class="flex flex-col items-center flex-1">
+          <div class="w-8 h-8 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold">1</div>
+          <span class="text-xs mt-1 text-orange-600 font-semibold">Cart</span>
+        </div>
+        <div class="flex-1 h-1 bg-orange-200"></div>
+        <div class="flex flex-col items-center flex-1">
+          <div class="w-8 h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center font-bold">2</div>
+          <span class="text-xs mt-1 text-gray-500">Address</span>
+        </div>
+        <div class="flex-1 h-1 bg-orange-200"></div>
+        <div class="flex flex-col items-center flex-1">
+          <div class="w-8 h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center font-bold">3</div>
+          <span class="text-xs mt-1 text-gray-500">Payment</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cart Table -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-left border border-gray-200">
+        <thead>
+          <tr class="bg-orange-100 text-gray-700">
+            <th class="p-3">Item</th>
+            <th class="p-3">Price</th>
+            <th class="p-3">Qty</th>
+            <th class="p-3">Subtotal</th>
+            <th class="p-3">Action</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-700">
+          <tr class="border-t hover:bg-yellow-50 transition">
+            <td class="p-3 flex items-center gap-2">
+              <img src="https://source.unsplash.com/40x40/?paneer,curry" class="w-10 h-10 rounded object-cover border" alt="Paneer Butter Masala">
+              <span>Paneer Butter Masala</span>
+              <span class="bg-orange-100 text-orange-700 text-xs px-2 py-0.5 rounded-full ml-2">Best Seller</span>
+            </td>
+            <td class="p-3">₹180</td>
+            <td class="p-3">
+              <div class="flex items-center gap-2">
+                <button class="bg-gray-200 px-2 rounded text-lg font-bold">-</button>
+                <input type="number" value="1" min="1" class="w-12 border border-gray-300 rounded-lg px-2 py-1 text-center">
+                <button class="bg-orange-500 text-white px-2 rounded text-lg font-bold">+</button>
+              </div>
+            </td>
+            <td class="p-3 font-semibold">₹180</td>
+            <td class="p-3"><button class="text-red-500 hover:text-red-700">Remove</button></td>
+          </tr>
+          <tr class="border-t hover:bg-yellow-50 transition">
+            <td class="p-3 flex items-center gap-2">
+              <img src="https://source.unsplash.com/40x40/?naan,bread" class="w-10 h-10 rounded object-cover border" alt="Butter Naan">
+              <span>Butter Naan</span>
+            </td>
+            <td class="p-3">₹40</td>
+            <td class="p-3">
+              <div class="flex items-center gap-2">
+                <button class="bg-gray-200 px-2 rounded text-lg font-bold">-</button>
+                <input type="number" value="2" min="1" class="w-12 border border-gray-300 rounded-lg px-2 py-1 text-center">
+                <button class="bg-orange-500 text-white px-2 rounded text-lg font-bold">+</button>
+              </div>
+            </td>
+            <td class="p-3 font-semibold">₹80</td>
+            <td class="p-3"><button class="text-red-500 hover:text-red-700">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Bill Details -->
+    <div class="mt-8 bg-orange-50 rounded-xl p-4 max-w-md ml-auto">
+      <h3 class="font-semibold text-orange-600 mb-2">Bill Details</h3>
+      <div class="flex justify-between text-sm mb-1">
+        <span>Item Total</span>
+        <span>₹260</span>
+      </div>
+      <div class="flex justify-between text-sm mb-1">
+        <span>Delivery Fee</span>
+        <span class="text-green-700">FREE</span>
+      </div>
+      <div class="flex justify-between text-sm mb-1">
+        <span>GST & Charges</span>
+        <span>₹15</span>
+      </div>
+      <div class="flex justify-between text-lg font-bold mt-2">
+        <span>Total Amount</span>
+        <span>₹275</span>
+      </div>
+      <div class="text-xs text-green-700 mt-2">You saved ₹40 on this order!</div>
+    </div>
+
+    <!-- Coupon Section -->
+    <div class="mt-6 flex items-center gap-2">
+      <input type="text" placeholder="Enter Coupon Code" class="border border-orange-300 rounded-lg px-3 py-2 w-48 focus:ring-2 focus:ring-orange-200 transition">
+      <button class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition">Apply</button>
+      <span class="text-green-600 text-sm ml-2">20% OFF Applied!</span>
+    </div>
+
+    <!-- Buttons -->
+    <div class="mt-8 flex flex-col md:flex-row justify-between gap-4">
+      <a href="add-items.html" class="bg-gray-300 text-gray-800 px-6 py-2 rounded-xl hover:bg-gray-400 transition flex items-center gap-2">
+        ⬅ Add More Items
+      </a>
+      <a href="place-order.html" class="bg-orange-500 text-white px-6 py-2 rounded-xl hover:bg-orange-600 transition flex items-center gap-2 font-semibold">
+        Proceed to Checkout ➡
+      </a>
+    </div>
+  </div>
+
+  <!-- Floating Help Button -->
+  <button class="fixed bottom-6 right-6 bg-orange-500 hover:bg-orange-600 text-white rounded-full shadow-lg p-4 flex items-center gap-2 animate-bounce focus:outline-none" aria-label="Help">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.77 9.77 0 01-4-.8L3 21l1.8-4A7.96 7.96 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+    </svg>
+    <span class="hidden md:inline font-semibold">Help</span>
+  </button>
+
+  <!-- Footer -->
+  <footer class="bg-white mt-12 py-4 text-center shadow-inner">
+    <p class="text-sm text-gray-500">© 2025 FoodieXpress. All rights reserved.</p>
+  </footer>
+</body>
+</html>

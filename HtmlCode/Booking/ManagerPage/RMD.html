@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Restaurant Dashboard</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Your Custom CSS -->
+  <link rel="stylesheet" href="RMD.css">
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+</head>
+<body>
+  <!-- Bootstrap Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+    <div class="container-fluid">
+      <!-- Logo -->
+      <a class="navbar-brand" href="#">Restaurant Name</a>
+
+      <!-- Hamburger Toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav">
+          <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5501/Hompg.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#">Menu </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Categories</a></li>
+              <li><a href="#">Items</a></li>
+              <li><a href="#">Today's Special</a></li>
+              <li><a href="#">Add-ons</a></li>
+              <li><a href="#">Add-on Rules</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link">Inventory</a>
+            <ul class="dropdown-menu">
+              <li><a href="http://127.0.0.1:5501/UserDashboard/bookings.html">Dashboard</a></li>
+              <li><a href="#">Storage Locations</a></li>
+              <li><a href="#">Vendors</a></li>
+              <li><a href="#">Master List</a></li>
+              <li><a href="#">Location Inventory</a></li>
+              <li><a href="#">Stock Transaction</a></li>
+              <li><a href="#">New Count</a></li>
+              <li><a href="#">New Purchase Order</a></li>
+              <li><a href="#">Purchase Orders</a></li>
+              <li><a href="#">Waste Management</a></li>
+              <li><a href="#">Reports</a></li>
+              <li><a href="#">Menu Profitability Report</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+              <a href="#" class="nav-link">Reports</a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Restaurant Performance</a></li>
+                <li><a href="#">Booking Reports</a></li>
+                <li><a href="#">Dine In & Online Order Reports</a></li>
+                <li><a href="#">Ledger Account</a></li>
+                <li><a href="#">Menu Engineering & Insight</a></li>
+                <li><a href="#">Multi Outlet Dashboard</a></li>
+              </ul>
+            </li>
+          <li class="nav-item"><a class="nav-link" href="#">Customer Review</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">CRM</a></li>
+        </ul>
+        <div class="user-section d-flex align-items-center gap-3">
+        <i class="fas fa-bell"></i>
+      <div class="profile-container position-relative">
+        <img src="Images/K_logo.jpg" class="profile-img" alt="User">
+        <ul class="profile-menu">
+          <li>Profile</li>
+          <li>Switch Account</li>
+          <li>Support Ticket</li>
+          <li>Help</li>
+          <li>Contract Detail</li>
+          <li>Contact Us</li>
+          <li>Sign out</li>
+          <li><hr></li>
+          
+          <li>admin Role</li>
+        </ul>
+      </div>
+    </div>
+</div>
+</nav>
+  <div class="tab-section">
+    <button class="tab-btn active-tab">Order Management</button>
+    <button class="tab-btn">Table Management</button>
+  </div>
+
+  </div>
+  <div class="control-bar">
+  <select class="table-count-select">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6" selected>6</option>
+  </select>
+
+  <button class="refresh-btn">Refresh</button>
+  
+  <select class="order-dropdown">
+    <option disabled selected>Add Online/Take Away Order</option>
+    <option>Swiggy</option>
+    <option>Zomato</option>
+    <option>Uber Eats</option>
+    <option>Phone Order</option>
+  </select>
+</div>
+<div class="legend-row">
+    <div class="legend-item">
+      <span class="legend-box free"></span> Table Free
+    </div>
+    <div class="legend-item">
+      <span class="legend-box running"></span> Order Running
+    </div>
+    <div class="legend-item">
+      <span class="legend-box settled"></span> Bill Settled
+    </div>
+    <div class="legend-item">
+      <span class="legend-box printed"></span> Bill Printed
+    </div>
+    <div class="legend-item">
+      <span class="legend-box ready"></span> Food Ready
+    </div>
+</div>
+<!-- Dining Section -->
+<div class="dining-section">
+  <div class="dining-cards">
+    <div class="cards">Dining Hall</div>
+    <div class="cards">Family Dining Area</div>
+    <div class="cards">VIP Lounge</div>
+    <div class="cards">Outdoor Seating</div>
+  </div>
+</div>
+<div class="dining-tables">
+  <div class="card">D1</div>
+  <div class="card">D2</div>
+  <div class="card">D3</div>
+  <div class="card">D4</div>
+  <div class="card">D5</div>
+  <div class="card">D6</div>
+  <div class="card">D7</div>
+  <div class="card">D8</div>
+  <div class="card">D9</div>
+  <div class="card">D10</div>
+  <div class="card">D11</div>
+  <div class="card">D12</div>
+</div>
+</body>
+</html>

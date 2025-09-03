@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Hotel & Restaurant Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="Admin.css" />
+</head>
+<body>
+         <script src="include.js"></script>
+    <div id="navbar"></div> 
+    <div class="dashboard-container">
+       
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-hotel logo-icon"></i>
+                <span class="logo-text">Admin Hub</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+    <a href="#hotel"><i class="fas fa-hotel"></i> Hotel Management</a>
+    <a href="#restaurant"><i class="fas fa-utensils"></i> Restaurant Management</a>
+    <a href="#users"><i class="fas fa-users"></i> All Users</a>
+    <a href="#managers"><i class="fas fa-user-tie"></i> Manager's Request</a>
+    <a href="#settings"><i class="fas fa-cog"></i> Settings</a>
+            </nav>
+        </aside>
+
+
+        <div id="main-content">
+    
+
+            <main>
+              
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <p class="card-title">Total Users</p>
+                        <p class="card-value">10,240</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="card-title">New Listings</p>
+                        <p class="card-value">345</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="card-title">Pending Approvals</p>
+                        <p class="card-value">12</p>
+                    </div>
+                     <div class="stat-card">
+                        <p class="card-title">Total Revenue</p>
+                        <p class="card-value">$120,543</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="card-title">Hotel Revenue</p>
+                        <p class="card-value">$85,301</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="card-title">Restaurant Revenue</p>
+                        <p class="card-value">$35,242</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="card-title">No. of Hotels</p>
+                        <p class="card-value">150</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="card-title">No. of Restaurants</p>
+                        <p class="card-value">210</p>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h3>Revenue Analytics (Month-wise)</h3>
+                    <div class="placeholder">
+                        <p>Monthly Revenue Chart Placeholder</p>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h3>Pending Manager Approvals</h3>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr  class="tbl-title">
+                                    <th>Manager Info</th>
+                                    <th>Business Name</th>
+                                    <th>Type</th>
+                                    <th>Date Submitted</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="manager-info">
+                                            <img src="https://placehold.co/32x32/FBCFE8/831843?text=S" alt="avatar">
+                                            <div>
+                                                <div class="name">Sarah Smith</div>
+                                                <div class="email">s.smith@example.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>The Grand Hotel</td>
+                                    <td>Hotel</td>
+                                    <td>2024-07-28</td>
+                                    <td class="action-buttons">
+                                        <button class="approve-btn">Approve</button>
+                                        <button class="reject-btn">Reject</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="manager-info">
+                                            <img src="https://placehold.co/32x32/BFDBFE/1E3A8A?text=M" alt="avatar">
+                                            <div>
+                                                <div class="name">Mike Vance</div>
+                                                <div class="email">m.vance@example.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Vance's Eatery</td>
+                                    <td>Restaurant</td>
+                                    <td>2024-07-27</td>
+                                    <td class="action-buttons">
+                                        <button class="approve-btn">Approve</button>
+                                        <button class="reject-btn">Reject</button>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td>
+                                        <div class="manager-info">
+                                            <img src="https://placehold.co/32x32/A7F3D0/14532D?text=J" alt="avatar">
+                                            <div>
+                                                <div class="name">Jane Doe</div>
+                                                <div class="email">j.doe@example.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Seaside Inn</td>
+                                    <td>Hotel</td>
+                                    <td>2024-07-26</td>
+                                    <td class="action-buttons">
+                                        <button class="approve-btn">Approve</button>
+                                        <button class="reject-btn">Reject</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+      <div id="footer"></div>
+
+    <script>
+      
+        const menuButton = document.getElementById('menu-button');
+        const sidebar = document.getElementById('sidebar');
+
+        menuButton.addEventListener('click', () => {
+            sidebar.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stay & Dine - User Experiences</title>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fdfdfd;
+  color: #333;
+}
+
+.container {
+  padding: 2rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #444;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 2px 4px 10px rgba(107, 107, 107, 0.1);
+  padding: 1.5rem;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.2s ease;
+  background-color: #f6cfd6;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 0.5rem 0;
+  color: #222;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+</style>
+</head>
+<body>
+  <script src="include.js"></script>
+  <div id="navbar"></div>
+
+  <div class="container">
+    <h2>Our User's Experience at Stay & Dine</h2>
+
+    <div class="card-container">
+      <div class="card">
+        <img src="user1.jpg" alt="User 1" />
+        <h3>Priya Sharma</h3>
+        <p>"Stay & Dine gave me the best dining experience! The food was delicious and the staff were extremely welcoming. Highly recommended!"</p>
+      </div>
+
+      <div class="card">
+        <img src="user2.jpg" alt="User 2" />
+        <h3>Rahul Verma</h3>
+        <p>"The ambiance is perfect for family dinners. I enjoyed every dish I tried here. Will definitely visit again!"</p>
+      </div>
+
+      <div class="card">
+        <img src="user3.jpg" alt="User 3" />
+        <h3>Ananya Gupta</h3>
+        <p>"From starters to desserts, everything was spot on. A wonderful place for a peaceful meal with friends."</p>
+      </div>
+
+      <div class="card">
+        <img src="user4.jpg" alt="User 4" />
+        <h3>Rohit Mehta</h3>
+        <p>"Excellent food quality and quick service. The chef personally came and greeted us, which made the experience even better."</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+</body>
+</html>

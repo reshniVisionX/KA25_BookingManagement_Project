@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Submit Review & Feedback</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .star { transition: color 0.2s; }
+    .star.selected, .star:hover, .star.hovered { color: #f59e42; }
+    .animate-pop { animation: pop 0.5s cubic-bezier(.17,.67,.83,.67); }
+    @keyframes pop { 0% { transform: scale(0.7); } 100% { transform: scale(1); } }
+  </style>
+</head>
+<body class="bg-yellow-50 min-h-screen flex items-center justify-center p-6">
+
+  <div class="bg-white max-w-2xl w-full p-8 rounded-2xl shadow-lg animate-pop">
+    <h2 class="text-3xl font-bold text-yellow-700 mb-6 text-center">Rate Your Experience</h2>
+
+    <!-- Restaurant Info -->
+    <div class="mb-6 text-gray-700 flex items-center gap-4 justify-center">
+      <img src="https://source.unsplash.com/60x60/?restaurant,indian" class="w-14 h-14 rounded-full object-cover border shadow" alt="Swathi Tiffin Center">
+      <div>
+        <p><strong>Restaurant:</strong> Swathi Tiffin Center</p>
+        <p><strong>Order ID:</strong> #RZ456789</p>
+      </div>
+    </div>
+
+    <!-- Star Rating -->
+    <div class="flex items-center space-x-2 mb-6 justify-center">
+      <span class="text-lg font-medium">Your Rating:</span>
+      <div class="flex space-x-1" id="star-rating">
+        <input type="radio" name="rating" id="star1" class="hidden" />
+        <label for="star1" class="star text-2xl text-gray-400 cursor-pointer" data-value="1">★</label>
+        <input type="radio" name="rating" id="star2" class="hidden" />
+        <label for="star2" class="star text-2xl text-gray-400 cursor-pointer" data-value="2">★</label>
+        <input type="radio" name="rating" id="star3" class="hidden" />
+        <label for="star3" class="star text-2xl text-gray-400 cursor-pointer" data-value="3">★</label>
+        <input type="radio" name="rating" id="star4" class="hidden" />
+        <label for="star4" class="star text-2xl text-gray-400 cursor-pointer" data-value="4">★</label>
+        <input type="radio" name="rating" id="star5" class="hidden" />
+        <label for="star5" class="star text-2xl text-gray-400 cursor-pointer" data-value="5">★</label>
+      </div>
+    </div>
+
+    <!-- Feedback Text -->
+    <textarea rows="5" placeholder="Write your feedback here..." class="w-full p-3 border border-yellow-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-400 resize-none mb-6"></textarea>
+
+    <!-- Quick Tags -->
+    <div class="mb-6 flex flex-wrap gap-2 justify-center">
+      <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs cursor-pointer hover:bg-yellow-200 transition">Tasty Food</span>
+      <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs cursor-pointer hover:bg-yellow-200 transition">Fast Delivery</span>
+      <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs cursor-pointer hover:bg-yellow-200 transition">Good Packaging</span>
+      <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs cursor-pointer hover:bg-yellow-200 transition">Polite Staff</span>
+      <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs cursor-pointer hover:bg-yellow-200 transition">Value for Money</span>
+      <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs cursor-pointer hover:bg-yellow-200 transition">Hygienic</span>
+    </div>
+
+    <!-- Upload Photo -->
+    <div class="mb-6 flex flex-col items-center">
+      <label class="block font-medium mb-2 text-gray-700">Upload Food Photo (optional)</label>
+      <input type="file" accept="image/*" class="border border-yellow-300 rounded-xl px-3 py-2 w-full max-w-xs text-sm">
+    </div>
+
+    <!-- Submit Button -->
+    <button class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-2 rounded-xl transition duration-200 w-full font-semibold text-lg">
+      Submit Feedback
+    </button>
+
+    <!-- Thank You Note -->
+    <p class="text-sm text-center text-gray-500 mt-4">Thank you for helping us improve! 🌟</p>
+    <p class="text-xs text-center text-yellow-600 mt-2">Your review helps other foodies make better choices.</p>
+    <div class="mt-4 flex justify-center gap-4">
+      <a href="order-history.html" class="text-yellow-700 underline font-semibold text-sm">View Order History</a>
+      <a href="restaurent-list.html" class="text-yellow-700 underline font-semibold text-sm">Browse More Restaurants</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white mt-12 py-4 text-center shadow-inner w-full">
+    <p class="text-sm text-gray-500">© 2025 FoodieXpress. All rights reserved.</p>
+  </footer>
+
+  <!-- Star Rating JS -->
+  <script>
+    const stars = document.querySelectorAll('#star-rating .star');
+    stars.forEach((star, idx) => {
+      star.addEventListener('mouseover', () => {
+        stars.forEach((s, i) => s.classList.toggle('hovered', i <= idx));
+      });
+      star.addEventListener('mouseout', () => {
+        stars.forEach(s => s.classList.remove('hovered'));
+      });
+      star.addEventListener('click', () => {
+        stars.forEach((s, i) => s.classList.toggle('selected', i <= idx));
+      });
+    });
+  </script>
+</body>
+</html>

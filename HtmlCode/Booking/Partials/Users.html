@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Users List</title>
+  <style>
+  
+    .content-wrapper{
+        width:100%;
+  margin: 2rem auto;
+  padding: 0 1rem;
+   font-family: Arial, sans-serif;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      margin-top: 2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 2px 2px 2px 10px rgba(148, 148, 148, 0.301);
+    }
+
+     td {
+      padding: 1rem;
+      text-align: left;
+    }
+
+    thead {
+      background-color: #4a90e2;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .action-buttons button {
+      padding: 0.5rem 1rem;
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .action-buttons button:hover {
+      background-color: #c0392b;
+    }
+
+    .content-wrapper {
+      max-width: 1000px;
+      margin: auto;
+    }
+    .tbl-title{
+        background-color:  #fb758b;
+        color:white !important;
+    }
+    th{
+        color:white !important;
+    }
+  </style>
+</head>
+<body>
+  <main class="content-wrapper">
+    <h2>All Users</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr class="tbl-title">
+            <th>User Name</th>
+            <th>Email</th>
+            <th>Joined Date</th>
+            <th>Last Active</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>j.doe@example.com</td>
+            <td>2023-01-15</td>
+            <td>2025-08-04 09:30</td>
+            <td class="action-buttons"><button class="block">Block</button></td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>j.smith@example.com</td>
+            <td>2023-02-20</td>
+            <td>2025-08-03 14:12</td>
+            <td class="action-buttons"><button class="block">Block</button></td>
+          </tr>
+          <tr>
+            <td>Alex Johnson</td>
+            <td>alex.j@example.com</td>
+            <td>2023-03-10</td>
+            <td>2025-08-04 10:05</td>
+            <td class="action-buttons"><button class="block">Block</button></td>
+          </tr>
+          <tr>
+            <td>Maria Gomez</td>
+            <td>m.gomez@example.com</td>
+            <td>2023-04-18</td>
+            <td>2025-08-02 18:47</td>
+            <td class="action-buttons"><button class="block">Block</button></td>
+          </tr>
+          <tr>
+            <td>Luke Brown</td>
+            <td>l.brown@example.com</td>
+            <td>2023-05-06</td>
+            <td>2025-08-04 11:15</td>
+            <td class="action-buttons"><button class="block">Block</button></td>
+          </tr>
+          <tr>
+            <td>Sara Khan</td>
+            <td>s.khan@example.com</td>
+            <td>2023-06-09</td>
+            <td>2025-08-01 20:10</td>
+            <td class="action-buttons"><button class="block">Block</button></td>
+          </tr>
+          <tr>
+            <td>David Lee</td>
+            <td>d.lee@example.com</td>
+            <td>2023-07-12</td>
+            <td>2025-08-03 08:25</td>
+            <td class="action-buttons"><button class="block">Block</button></td>
+          </tr>
+          <tr>
+            <td>Emily Davis</td>
+            <td>e.davis@example.com</td>
+            <td>2023-08-24</td>
+            <td>2025-08-04 07:42</td>
+            <td class="action-buttons"><button class="block">Block</button></td>
+          </tr>
+          <tr>
+            <td>Chris Evans</td>
+            <td>c.evans@example.com</td>
+            <td>2023-09-02</td>
+            <td>2025-08-04 06:33</td>
+            <td class="action-buttons"><button class="block">Block</button></td>
+          </tr>
+          <tr>
+            <td>Nina Patel</td>
+            <td>n.patel@example.com</td>
+            <td>2023-10-30</td>
+            <td>2025-08-03 17:54</td>
+            <td class="action-buttons"><button class="block">Block</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>

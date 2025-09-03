@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preferences</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      background-color: rgb(252, 218, 218);
+    }
+    a{
+      color: inherit;
+      text-decoration: none;
+    }
+
+    #footer {
+      padding: 0.5rem 1rem;
+      text-align: center;
+      background-color: #f43f5e;
+      color: white;
+      margin-top: auto;
+    }
+
+    .content-wrapper {
+      flex: 1;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: white;
+      padding: 20px;
+      border-right: 2px solid #f43f5e;
+    }
+
+    .sidebar img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .sidebar h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #f43f5e;
+    }
+
+    .sidebar button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+      background-color: rgb(252, 218, 218);
+      color: #333;
+      cursor: pointer;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .sidebar button:hover {
+      background-color: #f43f5e;
+      color: white;
+    }
+
+    .main {
+      flex: 1;
+      padding: 30px;
+      min-height: 800px;
+      background-color: white;
+    }
+
+    .main h2 {
+      margin-bottom: 20px;
+      color: #f43f5e;
+    }
+
+    .preferences-form {
+      max-width: 600px;
+    }
+
+    .preference-section {
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .preference-section h3 {
+      margin-bottom: 15px;
+      color: #f43f5e;
+    }
+
+    .preference-item {
+      margin-bottom: 15px;
+    }
+
+    .preference-item label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .preference-item input[type="checkbox"],
+    .preference-item input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    .preference-item select {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .form-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn-primary {
+      background-color: #f43f5e;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #d42c4a;
+    }
+
+    .btn-secondary {
+      background-color: #ccc;
+      color: #333;
+    }
+
+    .btn-secondary:hover {
+      background-color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar"></div>
+  <div class="content-wrapper">
+    <div class="sidebar">
+      <img src="https://via.placeholder.com/100" alt="User Profile">
+       <h3>Stay & Dine</h3>
+      <button><a href="dashboard.html">Dashboard</a></button>
+      <button><a href="bookings.html">Bookings</a> </button>
+      <button><a href="edit-profile.html">Profile</a></button>
+      <button><a href="preferences.html">Preferences</a></button>
+      <button><a href="http://127.0.0.1:5501/Contact.html">Support</a></button>
+      <button><a href="http://127.0.0.1:5501/Login.html">Logout</a></button>
+      <button><a href="../ManagerPage/HMD.html">Manage Hotels</a></button>
+        <button><a href="../ManagerPage/RMD.html">Manage Restaurants</a></button>
+      <button><a href="http://127.0.0.1:5501/Admin.html">Admin</a></button>
+       <button><a href="http://127.0.0.1:5501/Hompg.html">Home</a></button>
+    </div>
+    <div class="main">
+      <h2>Preferences</h2>
+      <div class="preferences-form">
+        <div class="preference-section">
+          <h3>Notification Preferences</h3>
+          <div class="preference-item">
+            <label>
+              <input type="checkbox" checked> Email Notifications
+            </label>
+          </div>
+          <div class="preference-item">
+            <label>
+              <input type="checkbox" checked> SMS Notifications
+            </label>
+          </div>
+          <div class="preference-item">
+            <label>
+              <input type="checkbox"> Push Notifications
+            </label>
+          </div>
+        </div>
+
+        <div class="preference-section">
+          <h3>Communication Preferences</h3>
+          <div class="preference-item">
+            <label>Promotional Offers:</label>
+            <select>
+              <option>Weekly</option>
+              <option selected>Monthly</option>
+              <option>Never</option>
+            </select>
+          </div>
+          <div class="preference-item">
+            <label>Newsletter:</label>
+            <select>
+              <option selected>Yes, send me updates</option>
+              <option>No, I don't want updates</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="preference-section">
+          <h3>Privacy Settings</h3>
+          <div class="preference-item">
+            <label>
+              <input type="checkbox" checked> Show my profile to other users
+            </label>
+          </div>
+          <div class="preference-item">
+            <label>
+              <input type="checkbox"> Allow search engines to index my profile
+            </label>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-primary">Save Preferences</button>
+          <button class="btn btn-secondary">Reset to Default</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="footer"></div>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      fetch("../Navbar.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("navbar").innerHTML = data);
+
+      fetch("../Footer.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("footer").innerHTML = data);
+    });
+  </script>
+</body>
+</html>

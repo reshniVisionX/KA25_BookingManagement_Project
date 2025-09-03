@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payment | FoodieXpress</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+<body class="bg-orange-50 min-h-screen p-6">
+
+  <!-- Sticky Navbar -->
+  <header class="bg-white shadow sticky top-0 z-40 mb-8">
+    <div class="max-w-3xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">🍽️</span>
+        <h1 class="text-xl font-bold text-orange-500">FoodieXpress</h1>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="review-cart.html" class="relative">
+          <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h18l-1 12H4L3 3z" />
+          </svg>
+          <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 rounded-full">2</span>
+        </a>
+        <img src="https://randomuser.me/api/portraits/men/31.jpg" alt="Profile" class="w-8 h-8 rounded-full border-2 border-orange-400 shadow"/>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-lg">
+    <h2 class="text-3xl font-bold text-orange-600 mb-8 text-center">💳 Proceed to Payment</h2>
+
+    <!-- Order Summary -->
+    <div class="mb-6 bg-orange-100 p-4 rounded-xl">
+      <div class="flex justify-between items-center">
+        <p class="text-lg font-semibold text-gray-800">🍽️ Order Total: ₹260</p>
+        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">You saved ₹40!</span>
+      </div>
+      <p class="text-sm text-gray-600">Delivery to: 12th Cross, MG Road, Bangalore</p>
+      <p class="text-xs text-orange-600 mt-1">Estimated Delivery: <span class="font-semibold">30-40 mins</span></p>
+    </div>
+
+    <!-- Payment Methods -->
+    <form class="space-y-6">
+      <p class="text-lg font-semibold text-gray-700">Select Payment Method:</p>
+
+      <div class="flex items-center gap-4">
+        <input type="radio" name="payment" id="cod" class="accent-orange-500" checked>
+        <label for="cod" class="text-gray-800">💵 Cash on Delivery (COD)</label>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <input type="radio" name="payment" id="upi" class="accent-orange-500">
+        <label for="upi" class="text-gray-800">📱 UPI / GPay / PhonePe</label>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <input type="radio" name="payment" id="card" class="accent-orange-500">
+        <label for="card" class="text-gray-800">💳 Credit / Debit Card</label>
+      </div>
+
+      <!-- Simulated UPI ID / Card fields -->
+      <div>
+        <label class="block font-semibold text-gray-700 mt-4 mb-1">Enter Payment Details</label>
+        <input type="text" placeholder="Enter UPI ID or Card Number" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-orange-200 transition">
+        <p class="text-xs text-gray-500 mt-1">Your payment is 100% secure & encrypted.</p>
+      </div>
+
+      <!-- Offers & Secure Payment -->
+      <div class="flex items-center gap-3 mt-2">
+        <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-semibold">Extra 10% Cashback on UPI</span>
+        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">Secure Payment <svg class="inline w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
+      </div>
+
+      <!-- Help & Support -->
+      <div class="mt-6 bg-orange-50 p-3 rounded-lg flex items-center gap-2">
+        <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.77 9.77 0 01-4-.8L3 21l1.8-4A7.96 7.96 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        <span class="text-sm text-orange-700">Need help? <a href="#" class="underline font-semibold">Chat with support</a></span>
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex justify-between mt-8">
+        <a href="place-order.html" class="bg-gray-300 text-gray-800 px-6 py-2 rounded-xl hover:bg-gray-400 transition">⬅ Back</a>
+        <a href="payment-success.html" class="bg-green-500 text-white px-6 py-2 rounded-xl hover:bg-green-600 transition font-semibold flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+          Confirm & Pay ➡
+        </a>
+      </div>
+    </form>
+  </div>
+
+  <!-- Floating Help Button -->
+  <button class="fixed bottom-6 right-6 bg-orange-500 hover:bg-orange-600 text-white rounded-full shadow-lg p-4 flex items-center gap-2 animate-bounce focus:outline-none" aria-label="Help">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.77 9.77 0 01-4-.8L3 21l1.8-4A7.96 7.96 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+    </svg>
+    <span class="hidden md:inline font-semibold">Help</span>
+  </button>
+
+  <!-- Footer -->
+  <footer class="bg-white mt-12 py-4 text-center shadow-inner">
+    <p class="text-sm text-gray-500">© 2025 FoodieXpress. All rights reserved.</p>
+  </footer>
+</body>
+</html>

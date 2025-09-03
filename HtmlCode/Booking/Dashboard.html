@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="Admin.css" />
+<style>
+ :root {
+ 
+  --primary-color: #6a11cb; 
+  --secondary-color: #2575fc;
+  --text-color: #333;
+  --bg-color-light: #f4f7fa;
+  --card-bg-light: #ffffff;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --table-header-bg: #eef1f6;
+  --border-color: #e0e6ed;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color-light);
+  color: var(--text-color);
+}
+
+main {
+ 
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+h2, h3 {
+  color: var(--primary-color);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: var(--card-bg-light);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 2px 2px 4px gray;
+  text-align: left; 
+  transition: all 0.3s ease;
+  border-left: 5px solid; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.card-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.stats-grid .stat-card:nth-child(1) { border-left-color: #6a11cb; } /* Purple */
+.stats-grid .stat-card:nth-child(2) { border-left-color: #ff6b6b; } /* Red */
+.stats-grid .stat-card:nth-child(3) { border-left-color: #2ec4b6; } /* Teal */
+.stats-grid .stat-card:nth-child(4) { border-left-color: #ff9f1c; } /* Orange */
+.stats-grid .stat-card:nth-child(5) { border-left-color: #e63946; } /* Dark Red */
+.stats-grid .stat-card:nth-child(6) { border-left-color: #43aa8b; } /* Green */
+.stats-grid .stat-card:nth-child(7) { border-left-color: #00bbf9; } /* Light Blue */
+.stats-grid .stat-card:nth-child(8) { border-left-color: #f72585; } /* Pink */
+
+.content-block {
+  background: var(--card-bg-light);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 2rem;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: left;
+}
+
+thead {
+  background-color: var(--table-header-bg);
+}
+
+th, td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tbl-title th {
+  font-weight: 600;
+  color: #4a5568;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background-color: #f7f9fc;
+}
+
+.manager-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.manager-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary-color);
+  padding: 2px;
+}
+
+.manager-info .name {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.manager-info .email {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.action-buttons {
+  white-space: nowrap;
+}
+
+.approve-btn, .reject-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  margin-right: 0.5rem;
+}
+
+.approve-btn {
+  background-color: #10b981;
+  color: white;
+}
+
+.approve-btn:hover {
+  background-color: #059669;
+}
+
+.reject-btn {
+  background-color: #ef4444;
+  color: white;
+}
+
+.reject-btn:hover {
+  background-color: #dc2626;
+}
+
+.placeholder {
+  background-color: #e9ecef;
+  border-radius: 8px;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+  font-style: italic;
+}
+.dashbrd{
+    width:100%;
+}
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
+</head>
+<body>
+        <main class="dashbrd">
+              
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <p class="card-title">Total Users</p>
+                        <p class="card-value">10,240</p>
+                    </div>
+            
+                    <div class="stat-card">
+                        <p class="card-title">Pending Approvals</p>
+                        <p class="card-value">12</p>
+                    </div>
+                     <div class="stat-card">
+                        <p class="card-title">Total Revenue</p>
+                        <p class="card-value">$120,543</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="card-title">Hotel Revenue</p>
+                        <p class="card-value">$85,301</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="card-title">Restaurant Revenue</p>
+                        <p class="card-value">$35,242</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="card-title">No. of Hotels</p>
+                        <p class="card-value">150</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="card-title">No. of Restaurants</p>
+                        <p class="card-value">210</p>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h3>Revenue Analytics (Month-wise)</h3>
+                    <div class="placeholder">
+                        <p>Monthly Revenue Chart Placeholder</p>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h3>Pending Manager Approvals</h3>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr  class="tbl-title">
+                                    <th>Manager Info</th>
+                                    <th>Business Name</th>
+                                    <th>Type</th>
+                                    <th>Date Submitted</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="manager-info">
+                                            <img src="https://placehold.co/32x32/FBCFE8/831843?text=S" alt="avatar">
+                                            <div>
+                                                <div class="name">Sarah Smith</div>
+                                                <div class="email">s.smith@example.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>The Grand Hotel</td>
+                                    <td>Hotel</td>
+                                    <td>2024-07-28</td>
+                                    <td class="action-buttons">
+                                        <button class="approve-btn">Approve</button>
+                                        <button class="reject-btn">Reject</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="manager-info">
+                                            <img src="https://placehold.co/32x32/BFDBFE/1E3A8A?text=M" alt="avatar">
+                                            <div>
+                                                <div class="name">Mike Vance</div>
+                                                <div class="email">m.vance@example.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Vance's Eatery</td>
+                                    <td>Restaurant</td>
+                                    <td>2024-07-27</td>
+                                    <td class="action-buttons">
+                                        <button class="approve-btn">Approve</button>
+                                        <button class="reject-btn">Reject</button>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td>
+                                        <div class="manager-info">
+                                            <img src="https://placehold.co/32x32/A7F3D0/14532D?text=J" alt="avatar">
+                                            <div>
+                                                <div class="name">Jane Doe</div>
+                                                <div class="email">j.doe@example.com</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Seaside Inn</td>
+                                    <td>Hotel</td>
+                                    <td>2024-07-26</td>
+                                    <td class="action-buttons">
+                                        <button class="approve-btn">Approve</button>
+                                        <button class="reject-btn">Reject</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+</body>
+</html>

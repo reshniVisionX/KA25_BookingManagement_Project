@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Restaurant List - Stay & Dine</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .glass {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(6px);
+    }
+    .floating-btn {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 50;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-pink-50 via-white to-pink-100 text-gray-800 min-h-screen">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-40 bg-white/90 shadow-md backdrop-blur">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <img src="https://img.icons8.com/ios-filled/50/ff69b4/restaurant.png" alt="Logo" class="w-8 h-8"/>
+        <h1 class="text-2xl font-bold text-pink-600 tracking-tight">Stay & Dine</h1>
+      </div>
+      <nav class="space-x-6 hidden md:block">
+        <a href="#" class="hover:text-pink-600 font-medium">Home</a>
+        <a href="#" class="hover:text-pink-600 font-medium">Dine</a>
+        <a href="#" class="hover:text-pink-600 font-medium">Bookings</a>
+        <a href="#" class="hover:text-pink-600 font-medium">Contact</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <button class="relative group">
+          <svg class="w-6 h-6 text-pink-500 group-hover:text-pink-700 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 13l4 4L19 7"/>
+          </svg>
+          <span class="absolute -top-2 -right-2 bg-pink-500 text-white text-xs rounded-full px-1">3</span>
+        </button>
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Profile" class="w-9 h-9 rounded-full border-2 border-pink-400 shadow"/>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="container mx-auto px-6 py-8 text-center">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-pink-600 mb-2">Discover & Book the Best Restaurants</h2>
+    <p class="text-gray-600 mb-6">Curated dining experiences, exclusive offers, and instant table booking. <span class="font-semibold text-pink-500">Eat. Enjoy. Repeat.</span></p>
+  </section>
+
+  <!-- Search & Filters -->
+  <section class="container mx-auto px-6">
+    <form class="glass rounded-xl shadow-lg p-4 flex flex-wrap gap-4 items-center justify-between mb-8">
+      <input type="text" placeholder="🔍 Search by name or cuisine..." class="flex-1 px-4 py-2 border border-pink-200 rounded-md focus:ring-2 focus:ring-pink-300 transition w-full md:w-auto"/>
+      <select class="px-4 py-2 border border-pink-200 rounded-md focus:ring-2 focus:ring-pink-300">
+        <option>All Locations</option>
+        <option>Bangalore</option>
+        <option>Hyderabad</option>
+        <option>Mumbai</option>
+        <option>Delhi</option>
+      </select>
+      <select class="px-4 py-2 border border-pink-200 rounded-md focus:ring-2 focus:ring-pink-300">
+        <option>All Cuisines</option>
+        <option>Indian</option>
+        <option>Chinese</option>
+        <option>Italian</option>
+        <option>Continental</option>
+      </select>
+      <select class="px-4 py-2 border border-pink-200 rounded-md focus:ring-2 focus:ring-pink-300">
+        <option>Sort by Rating</option>
+        <option>High to Low</option>
+        <option>Low to High</option>
+      </select>
+      <button type="submit" class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 rounded-md font-semibold transition">Search</button>
+    </form>
+  </section>
+
+  <!-- Restaurant Cards Grid -->
+  <section class="container mx-auto px-6 pb-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Card 1 -->
+    <div class="relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 group">
+      <img src="https://source.unsplash.com/400x220/?restaurant,indian" alt="Spice Delight" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"/>
+      <div class="absolute top-3 left-3 bg-pink-500 text-white text-xs px-3 py-1 rounded-full shadow">Featured</div>
+      <div class="absolute top-3 right-3">
+        <button aria-label="Add to favorites" class="bg-white/80 rounded-full p-2 hover:bg-pink-100 transition">
+          <svg class="w-5 h-5 text-pink-500 hover:fill-pink-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 21l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.18L12 21z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="p-5">
+        <div class="flex justify-between items-center mb-2">
+          <h3 class="text-lg font-bold">Spice Delight</h3>
+          <span class="text-sm bg-green-100 text-green-800 px-2 py-1 rounded">4.5 ⭐</span>
+        </div>
+        <p class="text-sm text-gray-600 mb-2">Indian, Chinese, Tandoori</p>
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="text-xs bg-gray-200 px-2 py-1 rounded">Pure Veg</span>
+          <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded">Open Now</span>
+        </div>
+        <a href="restaurent-details.html" class="block text-center bg-pink-500 hover:bg-pink-600 text-white py-2 rounded-md font-semibold transition">Book Table</a>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 group">
+      <img src="https://source.unsplash.com/400x220/?restaurant,italian" alt="La Pasta Fresca" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"/>
+      <div class="absolute top-3 left-3 bg-yellow-400 text-white text-xs px-3 py-1 rounded-full shadow">Top Rated</div>
+      <div class="absolute top-3 right-3">
+        <button aria-label="Add to favorites" class="bg-white/80 rounded-full p-2 hover:bg-yellow-100 transition">
+          <svg class="w-5 h-5 text-yellow-500 hover:fill-yellow-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 21l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.18L12 21z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="p-5">
+        <div class="flex justify-between items-center mb-2">
+          <h3 class="text-lg font-bold">La Pasta Fresca</h3>
+          <span class="text-sm bg-green-100 text-green-800 px-2 py-1 rounded">4.8 ⭐</span>
+        </div>
+        <p class="text-sm text-gray-600 mb-2">Italian, Pizza, Continental</p>
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="text-xs bg-gray-200 px-2 py-1 rounded">Family Friendly</span>
+          <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Open Now</span>
+        </div>
+        <a href="restaurent-details.html" class="block text-center bg-yellow-400 hover:bg-yellow-500 text-white py-2 rounded-md font-semibold transition">Book Table</a>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 group">
+      <img src="https://source.unsplash.com/400x220/?restaurant,chinese" alt="Dragon Palace" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"/>
+      <div class="absolute top-3 left-3 bg-blue-500 text-white text-xs px-3 py-1 rounded-full shadow">New</div>
+      <div class="absolute top-3 right-3">
+        <button aria-label="Add to favorites" class="bg-white/80 rounded-full p-2 hover:bg-blue-100 transition">
+          <svg class="w-5 h-5 text-blue-500 hover:fill-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 21l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.18L12 21z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="p-5">
+        <div class="flex justify-between items-center mb-2">
+          <h3 class="text-lg font-bold">Dragon Palace</h3>
+          <span class="text-sm bg-green-100 text-green-800 px-2 py-1 rounded">4.2 ⭐</span>
+        </div>
+        <p class="text-sm text-gray-600 mb-2">Chinese, Thai, Asian</p>
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="text-xs bg-gray-200 px-2 py-1 rounded">Non-Veg</span>
+          <span class="text-xs bg-red-100 text-red-600 px-2 py-1 rounded">Closed</span>
+        </div>
+        <a href="restaurent-details.html" class="block text-center bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-md font-semibold transition">Book Table</a>
+      </div>
+    </div>
+        <!-- Card 1 -->
+    <div class="relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 group">
+      <img src="https://source.unsplash.com/400x220/?restaurant,indian" alt="Spice Delight" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"/>
+      <div class="absolute top-3 left-3 bg-pink-500 text-white text-xs px-3 py-1 rounded-full shadow">Featured</div>
+      <div class="absolute top-3 right-3">
+        <button aria-label="Add to favorites" class="bg-white/80 rounded-full p-2 hover:bg-pink-100 transition">
+          <svg class="w-5 h-5 text-pink-500 hover:fill-pink-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 21l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.18L12 21z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="p-5">
+        <div class="flex justify-between items-center mb-2">
+          <h3 class="text-lg font-bold">Spice Delight</h3>
+          <span class="text-sm bg-green-100 text-green-800 px-2 py-1 rounded">4.5 ⭐</span>
+        </div>
+        <p class="text-sm text-gray-600 mb-2">Indian, Chinese, Tandoori</p>
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="text-xs bg-gray-200 px-2 py-1 rounded">Pure Veg</span>
+          <span class="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded">Open Now</span>
+        </div>
+        <a href="restaurent-details.html" class="block text-center bg-pink-500 hover:bg-pink-600 text-white py-2 rounded-md font-semibold transition">Book Table</a>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 group">
+      <img src="https://source.unsplash.com/400x220/?restaurant,italian" alt="La Pasta Fresca" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"/>
+      <div class="absolute top-3 left-3 bg-yellow-400 text-white text-xs px-3 py-1 rounded-full shadow">Top Rated</div>
+      <div class="absolute top-3 right-3">
+        <button aria-label="Add to favorites" class="bg-white/80 rounded-full p-2 hover:bg-yellow-100 transition">
+          <svg class="w-5 h-5 text-yellow-500 hover:fill-yellow-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 21l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.18L12 21z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="p-5">
+        <div class="flex justify-between items-center mb-2">
+          <h3 class="text-lg font-bold">La Pasta Fresca</h3>
+          <span class="text-sm bg-green-100 text-green-800 px-2 py-1 rounded">4.8 ⭐</span>
+        </div>
+        <p class="text-sm text-gray-600 mb-2">Italian, Pizza, Continental</p>
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="text-xs bg-gray-200 px-2 py-1 rounded">Family Friendly</span>
+          <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Open Now</span>
+        </div>
+        <a href="restaurent-details.html" class="block text-center bg-yellow-400 hover:bg-yellow-500 text-white py-2 rounded-md font-semibold transition">Book Table</a>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 group">
+      <img src="https://source.unsplash.com/400x220/?restaurant,chinese" alt="Dragon Palace" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"/>
+      <div class="absolute top-3 left-3 bg-blue-500 text-white text-xs px-3 py-1 rounded-full shadow">New</div>
+      <div class="absolute top-3 right-3">
+        <button aria-label="Add to favorites" class="bg-white/80 rounded-full p-2 hover:bg-blue-100 transition">
+          <svg class="w-5 h-5 text-blue-500 hover:fill-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 21l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.18L12 21z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="p-5">
+        <div class="flex justify-between items-center mb-2">
+          <h3 class="text-lg font-bold">Dragon Palace</h3>
+          <span class="text-sm bg-green-100 text-green-800 px-2 py-1 rounded">4.2 ⭐</span>
+        </div>
+        <p class="text-sm text-gray-600 mb-2">Chinese, Thai, Asian</p>
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="text-xs bg-gray-200 px-2 py-1 rounded">Non-Veg</span>
+          <span class="text-xs bg-red-100 text-red-600 px-2 py-1 rounded">Closed</span>
+        </div>
+        <a href="restaurent-details.html" class="block text-center bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-md font-semibold transition">Book Table</a>
+      </div>
+    </div>
+
+    <!-- Add more cards as needed, or generate dynamically with JS -->
+  </section>
+
+  <!-- Floating Chat/Help Button -->
+  <button class="floating-btn bg-pink-500 hover:bg-pink-600 text-white rounded-full shadow-lg p-4 flex items-center gap-2 animate-bounce focus:outline-none" aria-label="Chat with us">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.77 9.77 0 01-4-.8L3 21l1.8-4A7.96 7.96 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+    </svg>
+    <span class="hidden md:inline font-semibold">Chat</span>
+  </button>
+
+  <!-- Footer -->
+  <footer class="bg-white/90 mt-12 py-6 shadow-inner">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-gray-500">&copy; 2025 Stay & Dine. All rights reserved.</p>
+      <div class="flex gap-4">
+        <a href="#" aria-label="Instagram" class="text-pink-500 hover:text-pink-700">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5a5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5zm6.25.75a1 1 0 1 1-2 0a1 1 0 0 1 2 0z"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook" class="text-pink-500 hover:text-pink-700">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 5.006 3.657 9.128 8.438 9.877v-6.987h-2.54v-2.89h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89c1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.632.771-1.632 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.343 21.128 22 17.006 22 12"/></svg>
+        </a>
+        <a href="#" aria-label="Twitter" class="text-pink-500 hover:text-pink-700">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 0 0 1.88-2.37a8.59 8.59 0 0 1-2.72 1.04a4.28 4.28 0 0 0-7.29 3.9A12.13 12.13 0 0 1 3.11 4.6a4.28 4.28 0 0 0 1.32 5.71a4.23 4.23 0 0 1-1.94-.54v.05a4.28 4.28 0 0 0 3.43 4.19a4.3 4.3 0 0 1-1.93.07a4.29 4.29 0 0 0 4 2.98A8.6 8.6 0 0 1 2 19.54a12.13 12.13 0 0 0 6.56 1.92c7.88 0 12.2-6.53 12.2-12.2c0-.19 0-.39-.01-.58A8.72 8.72 0 0 0 24 4.59a8.48 8.48 0 0 1-2.54.7z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

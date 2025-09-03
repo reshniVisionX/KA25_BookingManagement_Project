@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <nav class="nav">
+                <div class="logo">🏨 HotelBooker</div>
+                <div class="nav-links">
+                   <a href="http://127.0.0.1:5501/Hompg.html">Home</a>
+                    <a href="#" class="nav-link active" data-page="hotel-list">Hotels</a>
+                    <a href="#" class="nav-link" data-page="watchlist">Watchlist</a>
+                    <a href="#" class="nav-link" data-page="booking-history">Bookings</a>
+                    <a href="#" class="nav-link" data-page="admin">Admin</a>
+                </div>
+            </nav>
+        </header>
+        <main class="main-content">
+            <div id="hotel-list-page" class="page">
+                <div class="search-filters">
+                    <div class="search-bar">
+                        <input type="text" class="search-input" placeholder="Search hotels, cities..." id="searchInput">
+                        <button class="btn btn-primary" id="searchBtn">Search</button>
+                    </div>
+                    <div class="filters">
+                        <div class="filter-group">
+                            <label>Sort By</label>
+                            <select class="filter-select" id="sortFilter">
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Highest Rated</option>
+                                <option value="name">Name A-Z</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Price Range</label>
+                            <select class="filter-select" id="priceFilter">
+                                <option value="all">All Prices</option>
+                                <option value="0-100">₹0 - ₹100</option>
+                                <option value="100-300">₹100 - ₹300</option>
+                                <option value="300-500">₹300 - ₹500</option>
+                                <option value="500+">₹500+</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Location</label>
+                            <select class="filter-select" id="locationFilter">
+                                <option value="all">All Locations</option>
+                                <option value="mumbai">Mumbai</option>
+                                <option value="delhi">Delhi</option>
+                                <option value="bangalore">Bangalore</option>
+                                <option value="goa">Goa</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Rating</label>
+                            <select class="filter-select" id="ratingFilter">
+                                <option value="all">All Ratings</option>
+                                <option value="4">4+ Stars</option>
+                                <option value="3">3+ Stars</option>
+                                <option value="2">2+ Stars</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div id="hotelsContainer" class="hotels-grid"></div>
+            </div>
+            <div id="hotel-details-page" class="page" style="display: none;">
+                <div class="hotel-header">
+                    <div class="hotel-title">
+                        <h1 id="hotelName">Hotel Name</h1>
+                        <p id="hotelLocation">Location</p>
+                        <div class="hotel-rating">
+                            <span class="stars" id="hotelStars">★★★★★</span>
+                            <span id="hotelRating">4.5</span>
+                        </div>
+                    </div>
+                    <div class="hotel-actions">
+                        <button class="btn btn-secondary" id="addToWatchlistBtn">Add to Watchlist</button>
+                        <button class="btn btn-primary" id="bookNowBtn">Book Now</button>
+                    </div>
+                </div>
+                <div class="image-carousel">
+                    <div class="carousel-container">
+                        <button class="carousel-btn carousel-prev">❮</button>
+                        <button class="carousel-btn carousel-next">❯</button>
+                        <div id="carouselImages"></div>
+                    </div>
+                </div>
+                <div class="hotel-details-grid">
+                    <div>
+                        <h3>About This Hotel</h3>
+                        <p id="hotelDescription">Hotel description will be loaded here...</p>
+                        <div class="rooms-section">
+                            <h3>Room Types</h3>
+                            <div class="rooms-grid" id="roomsGrid"></div>
+                        </div>
+                    </div>
+                    <div class="amenities">
+                        <h3>Amenities</h3>
+                        <div class="amenities-list" id="amenitiesList"></div>
+                    </div>
+                </div>
+                <div class="reviews-section">
+                    <h3>Reviews</h3>
+                    <div class="review-form">
+                        <h4>Write a Review</h4>
+                        <form id="reviewForm">
+                            <div class="form-group">
+                                <label>Your Name</label>
+                                <input type="text" class="form-input" id="reviewerName" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Rating</label>
+                                <div class="rating-input" id="ratingInput">
+                                    <button type="button" class="star-btn" data-rating="1">★</button>
+                                    <button type="button" class="star-btn" data-rating="2">★</button>
+                                    <button type="button" class="star-btn" data-rating="3">★</button>
+                                    <button type="button" class="star-btn" data-rating="4">★</button>
+                                    <button type="button" class="star-btn" data-rating="5">★</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Your Review</label>
+                                <textarea class="form-textarea" id="reviewText" required
+                                    placeholder="Share your experience..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit Review</button>
+                        </form>
+                    </div>
+                    <div class="reviews-list" id="reviewsList"></div>
+                </div>
+            </div>
+            <div id="booking-page" class="page" style="display: none;">
+                <h2>Book Your Stay</h2>
+                <div class="booking-form">
+                    <form id="bookingForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Check-in Date</label>
+                                <input type="date" class="form-input" id="checkinDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Check-out Date</label>
+                                <input type="date" class="form-input" id="checkoutDate" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Number of Guests</label>
+                                <select class="form-input" id="guestCount" required>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="roomType">Room Type</label>
+                                    <select class="form-input" id="roomType" name="roomType" required>
+                                        <option value="Standard Room" data-price="150">Standard Room - ₹150/night
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <h3>Guest Details</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" class="form-input" id="guestName" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-input" id="guestEmail" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" class="form-input" id="guestPhone" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Special Requests</label>
+                                <input type="text" class="form-input" id="specialRequests" placeholder="Optional">
+                            </div>
+                        </div>
+                        <div class="price-breakdown" id="priceBreakdown"></div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">
+                            Proceed to Payment
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div id="payment-page" class="page" style="display: none;">
+                <h2>Payment Details</h2>
+                <div class="booking-form">
+                    <div class="payment-methods">
+                        <div class="payment-method active" data-method="card">
+                            <h4>💳 Credit/Debit Card</h4>
+                        </div>
+                        <div class="payment-method" data-method="upi">
+                            <h4>📱 UPI Payment</h4>
+                        </div>
+                        <div class="payment-method" data-method="netbanking">
+                            <h4>🏦 Net Banking</h4>
+                        </div>
+                    </div>
+                    <form id="paymentForm">
+                        <div id="cardPayment" class="payment-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Card Number</label>
+                                    <input type="text" class="form-input" id="cardNumber"
+                                        placeholder="1234 5678 9012 3456" maxlength="19">
+                                </div>
+                                <div class="form-group">
+                                    <label>Cardholder Name</label>
+                                    <input type="text" class="form-input" id="cardName" placeholder="John Doe">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Expiry Date</label>
+                                    <input type="text" class="form-input" id="cardExpiry" placeholder="MM/YY"
+                                        maxlength="5">
+                                </div>
+                                <div class="form-group">
+                                    <label>CVV</label>
+                                    <input type="text" class="form-input" id="cardCvv" placeholder="123" maxlength="3">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="upiPayment" class="payment-form" style="display: none;">
+                            <div class="form-group">
+                                <label>UPI ID</label>
+                                <input type="text" class="form-input" id="upiId" placeholder="yourname@upi">
+                            </div>
+                        </div>
+                        <div id="netbankingPayment" class="payment-form" style="display: none;">
+                            <div class="form-group">
+                                <label>Select Bank</label>
+                                <select class="form-input" id="bankSelect">
+                                    <option value="">Choose your bank</option>
+                                    <option value="sbi">State Bank of India</option>
+                                    <option value="hdfc">HDFC Bank</option>
+                                    <option value="icici">ICICI Bank</option>
+                                    <option value="axis">Axis Bank</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="price-breakdown" id="paymentSummary"></div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">
+                            Complete Payment
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div id="payment-success-page" class="page" style="display: none;">
+                <div class="success-content">
+                    <div class="success-icon">✅</div>
+                    <h2>Booking Confirmed!</h2>
+                    <p>Your booking has been successfully confirmed.</p>
+                    <div class="booking-summary" id="bookingSummary"></div>
+                    <div style="margin-top: 30px;">
+                        <button class="btn btn-primary" onclick="showPage('hotel-list')">Book Another Hotel</button>
+                        <button class="btn btn-secondary" onclick="showPage('booking-history')">View Bookings</button>
+                    </div>
+                </div>
+            </div>
+            <div id="watchlist-page" class="page" style="display: none;">
+                <h2>Your Watchlist</h2>
+                <div id="watchlistContainer" class="hotels-grid"></div>
+            </div>
+            <div id="booking-history-page" class="page" style="display: none;">
+                <h2>Your Booking History</h2>
+                <div id="bookingHistoryContainer"></div>
+            </div>
+            <div id="admin-page" class="page" style="display: none;">
+                <h2>Admin Dashboard</h2>
+                <div class="admin-dashboard">
+                    <div class="admin-sidebar">
+                        <ul class="admin-nav">
+                            <li><a href="#" class="admin-nav-link active" data-section="hotels">Manage Hotels</a></li>
+                            <li><a href="#" class="admin-nav-link" data-section="reviews">Manage Reviews</a></li>
+                            <li><a href="#" class="admin-nav-link" data-section="bookings">View Bookings</a></li>
+                        </ul>
+                    </div>
+                    <div class="admin-content">
+                        <div id="admin-hotels" class="admin-section">
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                                <h3>Manage Hotels</h3>
+                                <button class="btn btn-primary" id="addHotelBtn">Add New Hotel</button>
+                            </div>
+                            <div id="hotelForm" class="form-container" style="display: none;">
+                                <form id="adminHotelForm">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label>Hotel Name</label>
+                                            <input type="text" class="form-input" id="adminHotelName" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Location</label>
+                                            <input type="text" class="form-input" id="adminHotelLocation" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label>Price per Night</label>
+                                            <input type="number" class="form-input" id="adminHotelPrice" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Rating</label>
+                                            <input type="number" class="form-input" id="adminHotelRating" min="1"
+                                                max="5" step="0.1" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea class="form-textarea" id="adminHotelDescription" required></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Image URL</label>
+                                        <input type="url" class="form-input" id="adminHotelImage" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Room Types (comma-separated: type,price,description;
+                                            type,price,description)</label>
+                                        <textarea class="form-textarea" id="adminHotelRooms"
+                                            placeholder="e.g., Standard Room,150,Comfortable room with city view;Deluxe Room,200,Spacious room with premium amenities"></textarea>
+                                    </div>
+                                    <div style="display: flex; gap: 10px;">
+                                        <button type="submit" class="btn btn-primary">Save Hotel</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            id="cancelHotelBtn">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <table class="admin-table" id="hotelsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Location</th>
+                                        <th>Price</th>
+                                        <th>Rating</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="hotelsTableBody"></tbody>
+                            </table>
+                        </div>
+                        <div id="admin-reviews" class="admin-section" style="display: none;">
+                            <h3>Manage Reviews</h3>
+                            <table class="admin-table" id="reviewsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Hotel</th>
+                                        <th>Reviewer</th>
+                                        <th>Rating</th>
+                                        <th>Review</th>
+                                        <th>Date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="reviewsTableBody"></tbody>
+                            </table>
+                        </div>
+                        <div id="admin-bookings" class="admin-section" style="display: none;">
+                            <h3>All Bookings</h3>
+                            <table class="admin-table" id="bookingsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Booking ID</th>
+                                        <th>Hotel</th>
+                                        <th>Guest</th>
+                                        <th>Check-in</th>
+                                        <th>Check-out</th>
+                                        <th>Total</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bookingsTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login & Signup</title>
+  <style>
+ body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+    h2 {
+      text-align: center;
+    }
+    input[type="text"], input[type="password"], input[type="email"] {
+      width: 93%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .error {
+      color: red;
+      font-size: 12px;
+      margin-top: -6px;
+      margin-bottom: 6px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #f43f5e;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #e11d48;
+    }
+    .switch {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .switch a {
+      color: #f43f5e;
+      text-decoration: none;
+    }
+    #signupRole{
+      width:100%;
+      height:35px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border-color: #bebdbd;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container" id="loginForm">
+  <h2>Login</h2>
+  <input type="email" id="loginEmail" placeholder="User Email" onblur="validateEmail('loginEmail','loginEmailError')">
+  <div id="loginEmailError" class="error"></div>
+  <input type="password" id="loginPassword" placeholder="Password" onblur="validateNotEmpty('loginPassword','loginPasswordError')">
+   <div id="loginPasswordError" class="error"></div>
+<button class="login" onclick="submitLogin()">Login</button>
+  <div class="switch">
+    Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a>
+  </div>
+</div>
+
+<div class="container" id="signupForm" style="display:none;">
+  <h2>Sign Up</h2>
+ <input type="text" id="signupUsername" placeholder="Username" onblur="validateNotEmpty('signupUsername', 'signupUsernameError')">
+  <div id="signupUsernameError" class="error"></div>
+
+  <input type="email" id="signupEmail" placeholder="Email" onblur="validateEmail('signupEmail', 'signupEmailError')">
+  <div id="signupEmailError" class="error"></div>
+
+  <input type="password" id="signupPassword" placeholder="Password" onblur="validatePassword('signupPassword', 'signupPasswordError')">
+  <div id="signupPasswordError" class="error"></div>
+
+  <button class="signup" onclick="submitSignup()">Sign Up</button>
+  <div class="switch">
+    Already have an account? <a href="#" onclick="showLogin()">Login</a>
+  </div>
+</div>
+
+<script>
+  function showSignup() {
+    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('signupForm').style.display = 'block';
+  }
+
+  function showLogin() {
+    document.getElementById('signupForm').style.display = 'none';
+    document.getElementById('loginForm').style.display = 'block';
+  }
+
+  function validateNotEmpty(id,errorId){
+    var input = document.getElementById(id);
+    var error = document.getElementById(errorId);
+    if(input.value.trim()===""){
+      error.textContent = "This field is required";
+      return false;
+    }else{
+      error.textContent = "";
+      return true;
+    }
+  }
+
+  function validateEmail(id,errorId){
+    var input = document.getElementById(id);
+    var error = document.getElementById(errorId);
+    var pattern = /^[a-z0-9]+@[a-z]+\.[a-z]+$/;
+    if(input.value.trim()===""){
+      error.textContent = "Email is required";
+      return false;
+    }
+    else if(!pattern.test(input.value.trim())){
+      error.textContent="Invalid Email Format";
+      return false;
+    }else{
+      error.textContent = "";
+      return true;
+    }
+  }
+
+  function validatePassword(id,errorId){
+    var input = document.getElementById(id);
+    var error = document.getElementById(errorId);
+    if(input.value.trim().length < 6){
+      error.textContent = "password must be at least 6 characters";
+      return false;
+    }else{
+      error.textContent = "";
+      return true;
+    }
+  }
+
+function submitLogin() {
+    var validEmail = validateEmail("loginEmail", "loginEmailError");
+    var validPassword = validateNotEmpty("loginPassword", "loginPasswordError");
+
+    if (validEmail && validPassword) {
+      window.location.href = "Hompg.html";
+    }
+  }
+
+  function submitSignup() {
+    var validUsername = validateNotEmpty("signupUsername", "signupUsernameError");
+    var validEmail = validateEmail("signupEmail", "signupEmailError");
+    var validPassword = validatePassword("signupPassword", "signupPasswordError");
+
+    if (validUsername && validEmail && validPassword) {
+      window.location.href = "Login.html";
+    }
+  }
+</script>
+
+</body>
+</html>

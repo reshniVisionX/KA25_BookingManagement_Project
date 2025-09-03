@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <style>
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #f43f5e;
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.intro-text {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.contact-info {
+  margin-bottom: 30px;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.contact-info h3 {
+  color: #f43f5e;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.call-button {
+  color: #f43f5e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.call-button:hover {
+  text-decoration: underline;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input[type="text"], textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  background-color: #f43f5e;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #e62e4d;
+}
+
+.chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.chatbot-toggle {
+  background-color: #f43f5e;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.chatbot-toggle:hover {
+  background-color: #e62e4d;
+}
+  </style>
+</head>
+<body>
+  <script src="include.js"></script>
+  <div id="navbar"></div>
+
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p class="intro-text">We’d love to hear from you! Whether you have a question about our services, need assistance with a booking, or want to provide feedback, our team is here to help. Reach out to us through the form below or give us a call.</p>
+
+    <div class="contact-info">
+      <h3>Contact Information</h3>
+      <p><strong>Phone:</strong> <a href="tel:+1234567890" class="call-button">+1-234-567-890</a></p>
+      <p><strong>Email:</strong> <a href="mailto:support@stayanddine.com">support@stayanddine.com</a></p>
+      <p><strong>Address:</strong> 123 Hospitality Lane, New York, NY 10001</p>
+      <p><strong>Hours:</strong> Mon-Fri, 9:00 AM - 6:00 PM IST</p>
+    </div>
+
+    <form>
+      <input type="text" placeholder="Subject" required />
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <div id="chatbot" class="chatbot">
+    <button class="chatbot-toggle">💬 Chat</button>
+  </div>
+
+  <div id="footer"></div>
+</body>
+</html>
