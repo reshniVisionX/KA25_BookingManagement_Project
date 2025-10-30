@@ -1,0 +1,139 @@
+# ---- Build Folders ----
+bin/
+obj/
+out/
+[Bb]uild/
+[Ll]og/
+
+# ---- User-specific files ----
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+*.vscode/
+.idea/
+*.rsuser
+
+# ---- Visual Studio generated files ----
+.vs/
+.vscode/
+*.dbmdl
+*.bak
+*.cache
+*.log
+*.tlog
+*.pdb
+*.tmp
+
+# ---- NuGet packages ----
+*.nupkg
+*.snupkg
+*.nuspec
+packages/
+# Uncomment if you have a private package folder in your solution
+# !packages/build/
+
+# ---- Publish & deployment outputs ----
+wwwroot/
+dist/
+publish/
+*.Publish.xml
+*.PublishSettings
+Project.lock.json
+
+# ---- ASP.NET specific ----
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+Properties/launchSettings.json
+
+# ---- Environment / Local configs ----
+.env
+.env.*
+local.settings.json
+
+# ---- Rider / ReSharper ----
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# ---- Test Results ----
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# ---- Entity Framework ----
+Migrations/
+
+# ---- OS-generated ----
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# ---- Backup files ----
+*.bak
+*.orig
+*.tmp
+
+# ---- Logs ----
+*.log
+logs/
+*.svclog
+
+# ---- Other IDEs ----
+*.swp
+*.sln.iml
+
+# ---- ASP.NET Scaffolding ----
+ScaffoldingReadMe.txt
+
+# ---- Node/NPM (if you use React/Angular front-end) ----
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# ---- Build output from frontend (if inside same repo) ----
+ClientApp/dist/
+ClientApp/build/
+ClientApp/node_modules/
+
+# ---- Coverage ----
+coverage/
+.coverage
+*.codecov
+lcov.info
+
+# ---- JetBrains Rider ----
+.idea/
+*.sln.iml
+
+# ---- Temporary JSONs, Debug Dumps ----
+*.json.bak
+*.bak.json
+*.dump
+
+
+# Enforce LF line endings for all text files
+* text=auto eol=lf
+
+# Keep Windows batch files and PowerShell scripts CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Keep images and binaries untouched
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.exe binary
+*.dll binary
+
+
+# Ignore Visual Studio solution files
+*.sln
